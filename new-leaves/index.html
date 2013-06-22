@@ -4,14 +4,16 @@
   <meta charset="utf-8">
   <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="color:Background" content="#2CD85E">
+  <meta name="color:Background Color" content="#2CD85E">
+  <meta name="image:Background Image" content="http://static.tumblr.com/w10eljr/GUSmotade/bg.png">
+  <meta name="color:Header" content="#FDCBE8">
   <meta name="color:Content Background" content="#ffffff">
   <meta name="color:Text" content="#444444">
   <meta name="color:Link" content="#00CCF7">
   <meta name="color:Link Hover" content="#E33978">
   <meta name="color:Border" content="#FDCBE8">
   <meta name="color:Title" content="#E33978">
-  <meta name="color:Description" content="#999999">
+  <meta name="color:Description" content="#CD85B0">
   <meta name="text:Reblog Title" content="Reblog">
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -38,19 +40,32 @@
     }
     body {
       font-family: 'Merriweather Sans', 'Helvetica', 'Arial', sans-serif;
-      background-color: {color:Background};
+      background-color: {color:Background Color};
+      background-image: url('{image:Background Image}');
       color: {color:Text};
     }
     #outer-container {
       width: 640px;
       margin: 40px auto;
       position: relative;
+      left: 4.5em;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
       background-color: {color:Content Background};
     }
     #header {
-      width: 94%;
-      margin: 0 auto;
-      padding: 1em 0 0 0;
+      padding: 1em 3%;
+      -webkit-border-top-left-radius: 4px;
+      -webkit-border-top-right-radius: 4px;
+      -moz-border-radius-topleft: 4px;
+      -moz-border-radius-topright: 4px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      background-color: {color:Header};
     }
     h1 a, h2 a, h3 a, h4 a {
       text-decoration: none;
@@ -61,7 +76,7 @@
     #header h1 {
       font-size: 24px;
       font-weight: normal;
-      margin: 14px 0;
+      margin: 14px 0 10px 0;
       color: {color:Title};
     }
     #header h1 a {
@@ -71,9 +86,10 @@
       color: {color:Link Hover};
     }
     #header h2 {
-      margin: 0;
+      margin: 0 0 14px 0;
       font-weight: normal;
-      font-size: 18px;
+      font-size: 16px;
+      font-style: italic;
       color: {color:Description};
     }
     #nav {
@@ -99,22 +115,34 @@
       display: block;
       padding: 1em;
       text-decoration: none;
+      text-shadow: 0 1px 2px {color:Background Color};
       color: {color:Content Background};
     }
     #nav a:hover, #nav a:focus {
-      background-color: rgba(255, 255, 255, 0.7);
-      color: {color:Background};
+      background-color: {color:Link};
+      color: {color:Content Background};
     }
     #content {
-      margin: 1em;
+      padding: 40px 0 0 0;
+      -webkit-box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     }
     article {
+      line-height: 1.4;
       width: 400px;
       margin: 0 auto 40px auto;
+      -webkit-box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
+      box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
       border: 3px solid {color:Border};
+    }
+    article header h3 {
+      margin: 0;
     }
     article.video {
       width: 500px;
+    }
+    article.photo img.photo {
+      border: 1px solid #666666;
     }
     article img, article iframe {
       max-width: 100%;
@@ -130,9 +158,13 @@
       font-size: 12px;
     }
     #footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid {color:Border};
+    }
+    #footer ul {
       width: 94%;
       margin: 0 auto;
-      padding-bottom: 2em;
     }
     ul.inline {
       margin: 0;
@@ -148,12 +180,30 @@
     ul.inline li + li {
       margin-left: 1em;
     }
-    @media (max-width: 979px) {
+    @media (max-width: 860px) {
+      #outer-container {
+        left: 0;
+      }
       #nav {
+        text-align: left;
         position: relative;
         left: 0;
         width: auto;
+        padding: 0 3%;
         background-color: transparent;
+        border-bottom: 1px solid {color:Border};
+      }
+      #nav ul {
+        font-size: 14px;
+      }
+      #nav a {
+        padding: 0.5em 0;
+        text-shadow: none;
+        color: {color:Link};
+      }
+      #nav a:hover, #nav a:focus {
+        background-color: {color:Content Background};
+        color: {color:Link Hover};
       }
     }
     @media (max-width: 767px) {
@@ -183,7 +233,10 @@
     </header>
 
     <nav id="nav">
-      <ul class="inline">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
         {block:HasPages}
           {block:Pages}
             <li>
@@ -201,6 +254,9 @@
             <a href="/ask">{AskLabel}</a>
           </li>
         {/block:AskEnabled}
+        <li>
+          <a href="/archive">Archive</a>
+        </li>
       </ul>
     </nav>
 
@@ -311,10 +367,29 @@
                 <li>
                   <a href="{ReblogURL}">{text:Reblog Title}</a>
                 </li>
+                {block:RebloggedFrom}
+                  <li>
+                    <a href="{ReblogRootURL}">Source</a>
+                  </li>
+                {/block:RebloggedFrom}
+                {block:HighRes}
+                  <li>
+                    <a href="{PhotoURL-HighRes}">High-Res</a>
+                  </li>
+                {/block:HighRes}
+                {block:ExternalAudio}
+                  <li>
+                    <a href="{ExternalAudioURL}">Download</a>
+                  </li>
+                {/block:ExternalAudio}
               </ul>
             </footer>
           </div><!--.padding-->
         </article>
+
+        {block:PermalinkPage}
+          {PostNotes}
+        {/block:PermalinkPage}
       {/block:Posts}
     </div><!--#content-->
 
@@ -322,7 +397,7 @@
       <ul class="inline">
         {block:PreviousPage}
           <li>
-            <a href="{PreviousPage}">&lt; Previous</a>
+            <a href="{PreviousPage}">&lt; Previous Page</a>
           </li>
         {/block:PreviousPage}
 
@@ -332,9 +407,20 @@
           </li>
         {/block:NextPage}
 
-        <li>
-          <a href="/archive">Archive</a>
-        </li>
+        {block:PermalinkPage}
+          {block:PermalinkPagination}
+            {block:NextPost}
+              <li>
+                <a href="{NextPost}">&lt; Newer Post</a>
+              </li>
+            {/block:NextPost}
+            {block:PreviousPost}
+              <li>
+                <a href="{PreviousPost}">Older Post &gt;</a>
+              </li>
+            {/block:PreviousPost}
+          {/block:PermalinkPagination}
+        {/block:PermalinkPage}
       </ul>
     </footer>
   </div><!--#outer-container-->
