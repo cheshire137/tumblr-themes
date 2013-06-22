@@ -144,6 +144,20 @@
     article.photo img.photo {
       border: 1px solid #666666;
     }
+    article.photo .caption {
+      font-size: 12px;
+      font-style: italic;
+    }
+    article.quote .source {
+      font-style: italic;
+    }
+    article.quote .source:before {
+      content: '\2014';
+      padding-right: 0.3em;
+    }
+    article.link a.link {
+
+    }
     article img, article iframe {
       max-width: 100%;
     }
@@ -166,6 +180,22 @@
       width: 94%;
       margin: 0 auto;
     }
+    ul.chat {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.chat li {
+      margin-bottom: 10px;
+    }
+    ul.chat li .label {
+      font-weight: 700;
+    }
+    ul.chat li.user_1 .label {
+      color: {color:Background Color};
+    }
+    ul.chat li.user_2 .label {
+      color: {color:Title};
+    }
     ul.inline {
       margin: 0;
       padding: 0;
@@ -179,6 +209,17 @@
     }
     ul.inline li + li {
       margin-left: 1em;
+    }
+    ol.notes {
+      line-height: 1.4;
+      font-size: 12px;
+      list-style: none;
+    }
+    ol.notes li.note {
+      margin-bottom: 10px;
+    }
+    ol.notes li.note a.avatar_frame img.avatar {
+      vertical-align: middle;
     }
     @media (max-width: 860px) {
       #outer-container {
@@ -301,15 +342,21 @@
             {/block:Photoset}
 
             {block:Quote}
-              <span class="open-quote">&ldquo;</span><span class="quote">{Quote}</span><span class="close-quote">&rdquo;</span>
+              <p class="quote-wrapper">
+                <span class="open-quote">&ldquo;</span><span class="quote">{Quote}</span><span class="close-quote">&rdquo;</span>
+              </p>
 
               {block:Source}
-                <div class="source">{Source}</div>
+                <p class="source">{Source}</p>
               {/block:Source}
             {/block:Quote}
 
             {block:Link}
-              <a href="{URL}" class="link" {Target}>{Name}</a>
+              <header>
+                <h3>
+                  <a href="{URL}" class="link" {Target}>{Name}</a>
+                </h3>
+              </header>
 
               {block:Description}
                 <div class="description">{Description}</div>
@@ -361,7 +408,7 @@
                 {/block:Date}
                 {block:NoteCount}
                   <li>
-                    <a href="{Permalink}">&#9825; {NoteCount}</a>
+                    <a href="{Permalink}">♥ {NoteCount}</a>
                   </li>
                 {/block:NoteCount}
                 <li>
