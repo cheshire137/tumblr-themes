@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!-- Theme by Sarah Vessels -->
+  <!-- Get this Tumblr theme and more free from https://github.com/moneypenny/tumblr-themes -->
   <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="color:Background Color" content="#2CD85E">
@@ -38,6 +40,19 @@
     a:hover, a:focus {
       color: {color:Link Hover};
     }
+    a#install-theme {
+      position: absolute;
+      right: 3px;
+      padding: 0 0.3em;
+      text-decoration: none;
+      top: 26px;
+      color: #fff;
+      border: 1px solid rgba(0,0,0,0.18);
+      background: #3e3e3e;
+      background: rgba(0,0,0,0.38);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.08);
+      font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+    }
     body {
       font-family: 'Merriweather Sans', 'Helvetica', 'Arial', sans-serif;
       background-color: {color:Background Color};
@@ -69,6 +84,12 @@
     }
     h1 a, h2 a, h3 a, h4 a {
       text-decoration: none;
+    }
+    #header #logo {
+      float: left;
+      border: 1px solid rgba(0,0,0,0.1);
+      margin-top: 11px;
+      margin-right: 1em;
     }
     #header h1, article header h3 {
       font-family: 'Marmelad', sans-serif;
@@ -267,6 +288,7 @@
 <body>
   <div id="outer-container" class="container">
     <header id="header">
+      <img src="{PortraitURL-64}" width="64" height="64" alt="{Title}" id="logo">
       <h1><a href="/">{Title}</a></h1>
       {block:Description}
         <h2>{Description}</h2>
@@ -471,5 +493,6 @@
       </ul>
     </footer>
   </div><!--#outer-container-->
+  <a href="https://github.com/moneypenny/tumblr-themes" id="install-theme" target="_blank" title="Get the code for this theme">Install Theme</a>
 </body>
 </html>
