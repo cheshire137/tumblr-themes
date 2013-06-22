@@ -12,6 +12,7 @@
   <meta name="color:Border" content="#FDCBE8">
   <meta name="color:Title" content="#E33978">
   <meta name="color:Description" content="#999999">
+  <meta name="text:Reblog Title" content="Reblog">
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -19,22 +20,31 @@
   {block:Description}
     <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}">
   {/block:Description}
+  <link href="http://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Merriweather+Sans:400,400italic,700" rel="stylesheet" type="text/css">
   <style type="text/css">
     /*! normalize.css v1.1.0 | MIT License | git.io/normalize */
     article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.67em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
     a, a:link, a:visited, a:active {
+      -webkit-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      -moz-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      -ms-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      -o-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
       color: {color:Link};
     }
     a:hover, a:focus {
       color: {color:Link Hover};
     }
     body {
+      font-family: 'Merriweather Sans', 'Helvetica', 'Arial', sans-serif;
       background-color: {color:Background};
       color: {color:Text};
     }
     #outer-container {
-      width: 960px;
-      margin: 20px auto 40px auto;
+      width: 640px;
+      margin: 40px auto;
+      position: relative;
       background-color: {color:Content Background};
     }
     #header {
@@ -42,85 +52,163 @@
       margin: 0 auto;
       padding: 1em 0 0 0;
     }
+    h1 a, h2 a, h3 a, h4 a {
+      text-decoration: none;
+    }
+    #header h1, article header h3 {
+      font-family: 'Marmelad', sans-serif;
+    }
     #header h1 {
       font-size: 24px;
+      font-weight: normal;
+      margin: 14px 0;
       color: {color:Title};
+    }
+    #header h1 a {
+      color: {color:Title};
+    }
+    #header h1 a:hover, #header h1 a:focus {
+      color: {color:Link Hover};
     }
     #header h2 {
       margin: 0;
+      font-weight: normal;
       font-size: 18px;
       color: {color:Description};
     }
-    nav {
-      float: right;
+    #nav {
+      position: absolute;
+      left: -9em;
+      width: 9em;
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-border-top-left-radius: 4px;
+      -webkit-border-bottom-left-radius: 4px;
+      -moz-border-radius-topleft: 4px;
+      -moz-border-radius-bottomleft: 4px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      text-align: right;
     }
-    nav ul {
-      margin: 0;
+    #nav ul {
+      font-size: 12px;
+      margin: 14px 0;
       padding: 0;
       list-style: none;
     }
-    nav ul li {
-      display: inline;
+    #nav a {
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+      color: {color:Content Background};
     }
-    nav ul li + li {
-      margin-left: 1em;
+    #nav a:hover, #nav a:focus {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: {color:Background};
     }
     #content {
       margin: 1em;
     }
     article {
-      display: inline-block;
-      vertical-align: top;
-      margin: 0 1% 40px 1%;
-      max-width: 47%;
+      width: 400px;
+      margin: 0 auto 40px auto;
       border: 3px solid {color:Border};
+    }
+    article.video {
+      width: 500px;
     }
     article img, article iframe {
       max-width: 100%;
     }
     article .padding {
       padding: 1em;
+      overflow: hidden;
+    }
+    article footer {
+      margin-top: 10px;
+    }
+    article footer ul {
+      font-size: 12px;
     }
     #footer {
-      margin: 1em;
+      width: 94%;
+      margin: 0 auto;
+      padding-bottom: 2em;
+    }
+    ul.inline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.inline li {
+      display: inline;
+    }
+    ul.inline li a {
+      text-decoration: none;
+    }
+    ul.inline li + li {
+      margin-left: 1em;
+    }
+    @media (max-width: 979px) {
+      #nav {
+        position: relative;
+        left: 0;
+        width: auto;
+        background-color: transparent;
+      }
+    }
+    @media (max-width: 767px) {
+      #outer-container {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+      article.video {
+        width: auto;
+      }
+    }
+    @media (max-width: 480px) {
+      article, article.video {
+        width: auto;
+      }
     }
   </style>
 </head>
 <body>
   <div id="outer-container" class="container">
     <header id="header">
-      <nav>
-        <ul>
-          {block:HasPages}
-            {block:Pages}
-              <li>
-                <a href="{URL}">{Label}</a>
-              </li>
-            {/block:Pages}
-          {/block:HasPages}
-          {block:SubmissionsEnabled}
-            <li>
-              <a href="/submit">{SubmitLabel}</a>
-            </li>
-          {/block:SubmissionsEnabled}
-          {block:AskEnabled}
-            <li>
-              <a href="/ask">{AskLabel}</a>
-            </li>
-          {/block:AskEnabled}
-        </ul>
-      </nav>
-      <h1>{Title}</h1>
+      <h1><a href="/">{Title}</a></h1>
       {block:Description}
         <h2>{Description}</h2>
       {/block:Description}
     </header>
 
+    <nav id="nav">
+      <ul class="inline">
+        {block:HasPages}
+          {block:Pages}
+            <li>
+              <a href="{URL}">{Label}</a>
+            </li>
+          {/block:Pages}
+        {/block:HasPages}
+        {block:SubmissionsEnabled}
+          <li>
+            <a href="/submit">{SubmitLabel}</a>
+          </li>
+        {/block:SubmissionsEnabled}
+        {block:AskEnabled}
+          <li>
+            <a href="/ask">{AskLabel}</a>
+          </li>
+        {/block:AskEnabled}
+      </ul>
+    </nav>
+
     <div id="content">
       {block:Posts}
-        {block:Text}
-          <article class="post text">
-            <div class="padding">
+        <article class="{block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}">
+          <div class="padding">
+            {block:Text}
               {block:Title}
                 <header>
                   <h3><a href="{Permalink}">{Title}</a></h3>
@@ -129,25 +217,16 @@
               <section>
                 {Body}
               </section>
-            </div>
-          </article>
-        {/block:Text}
+            {/block:Text}
 
-        {block:Photo}
-          <article class="post photo">
-            <div class="padding">
+            {block:Photo}
               <img class="photo" src="{PhotoURL-500}" alt="{PhotoAlt}">
-
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
-            </div>
-          </article>
-        {/block:Photo}
+            {/block:Photo}
 
-        {block:Panorama}
-          <article class="post panorama">
-            <div class="padding">
+            {block:Panorama}
               {LinkOpenTag}
                 <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
               {LinkCloseTag}
@@ -155,51 +234,37 @@
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
-            </div>
-          </article>
-        {/block:Panorama}
+            {/block:Panorama}
 
-        {block:Photoset}
-          <article class="post photoset">
-            <div class="padding">
+            {block:Photoset}
               {Photoset-500}
 
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
-            </div>
-          </article>
-        {/block:Photoset}
+            {/block:Photoset}
 
-        {block:Quote}
-          <article class="post quote">
-            <div class="padding">
+            {block:Quote}
               <span class="open-quote">&ldquo;</span><span class="quote">{Quote}</span><span class="close-quote">&rdquo;</span>
 
               {block:Source}
                 <div class="source">{Source}</div>
               {/block:Source}
-            </div>
-          </article>
-        {/block:Quote}
+            {/block:Quote}
 
-        {block:Link}
-          <article class="post link">
-            <div class="padding">
+            {block:Link}
               <a href="{URL}" class="link" {Target}>{Name}</a>
 
               {block:Description}
                 <div class="description">{Description}</div>
               {/block:Description}
-            </div>
-          </article>
-        {/block:Link}
+            {/block:Link}
 
-        {block:Chat}
-          <article class="post chat">
-            <div class="padding">
+            {block:Chat}
               {block:Title}
-                <h3><a href="{Permalink}">{Title}</a></h3>
+                <header>
+                  <h3><a href="{Permalink}">{Title}</a></h3>
+                </header>
               {/block:Title}
 
               <ul class="chat">
@@ -213,46 +278,64 @@
                   </li>
                 {/block:Lines}
               </ul>
-            </div>
-          </article>
-        {/block:Chat}
+            {/block:Chat}
 
-        {block:Video}
-          <article class="post video">
-            <div class="padding">
+            {block:Video}
               {Video-500}
 
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
-            </div>
-          </article>
-        {/block:Video}
+            {/block:Video}
 
-        {block:Audio}
-          <article class="post audio">
-            <div class="padding">
+            {block:Audio}
               {AudioPlayerBlack}
 
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
-            </div>
-          </article>
-        {/block:Audio}
+            {/block:Audio}
+
+            <footer>
+              <ul class="inline">
+                {block:Date}
+                  <li>
+                    <a href="{Permalink}">{TimeAgo}</a>
+                  </li>
+                {/block:Date}
+                {block:NoteCount}
+                  <li>
+                    <a href="{Permalink}">&#9825; {NoteCount}</a>
+                  </li>
+                {/block:NoteCount}
+                <li>
+                  <a href="{ReblogURL}">{text:Reblog Title}</a>
+                </li>
+              </ul>
+            </footer>
+          </div><!--.padding-->
+        </article>
       {/block:Posts}
     </div><!--#content-->
 
     <footer id="footer">
-      {block:PreviousPage}
-        <a href="{PreviousPage}">&#171; Previous</a>
-      {/block:PreviousPage}
+      <ul class="inline">
+        {block:PreviousPage}
+          <li>
+            <a href="{PreviousPage}">&lt; Previous</a>
+          </li>
+        {/block:PreviousPage}
 
-      {block:NextPage}
-        <a href="{NextPage}">Next &#187;</a>
-      {/block:NextPage}
+        {block:NextPage}
+          <li>
+            <a href="{NextPage}">Next &gt;</a>
+          </li>
+        {/block:NextPage}
 
-      <a href="/archive">Archive</a>
+        <li>
+          <a href="/archive">Archive</a>
+        </li>
+      </ul>
     </footer>
   </div><!--#outer-container-->
 </body>
