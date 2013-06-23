@@ -342,7 +342,9 @@
             {/block:Text}
 
             {block:Photo}
-              <img class="photo" src="{PhotoURL-500}" alt="{PhotoAlt}">
+              {LinkOpenTag}
+                <img class="photo" src="{PhotoURL-500}" alt="{PhotoAlt}">
+              {LinkCloseTag}
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
@@ -441,9 +443,14 @@
                 </li>
                 {block:RebloggedFrom}
                   <li>
-                    <a href="{ReblogRootURL}">Source</a>
+                    <a href="{ReblogRootURL}">Reblog Source</a>
                   </li>
                 {/block:RebloggedFrom}
+                {block:ContentSource}
+                  <li>
+                    <a href="{SourceURL}">Source</a>
+                  </li>
+                {/block:ContentSource}
                 {block:HighRes}
                   <li>
                     <a href="{PhotoURL-HighRes}">High-Res</a>
