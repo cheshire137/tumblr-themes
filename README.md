@@ -1,4 +1,6 @@
-# Tumblr Themes
+# Have some free Tumblr themes!
+
+Feel free to use these as they come or modify them yourself.
 
 ## New Leaves
 
