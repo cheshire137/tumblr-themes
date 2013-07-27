@@ -2,6 +2,12 @@
 
 Feel free to use these as they come or modify them yourself.
 
+## Graystrap
+
+![Screenshot of Graystrap](http://github.com/moneypenny/tumblr-themes/raw/master/graystrap/screenshot.png)
+
+Features a [tag cloud](http://post-theory.com/tumblr-tag-cloud-javascript) in the sidebar, you just set your Tumblr URL in the theme options. Customizable colors with the default colors coming from the [Muted Range](http://www.colourlovers.com/palette/2840370/Muted_Range?sAC=1) palette. Default background pattern is [Tweed](http://subtlepatterns.com/tweed/) from Subtle Patterns.
+
 ## New Leaves
 
 ![Screenshot of New Leaves](http://github.com/moneypenny/tumblr-themes/raw/master/new-leaves/screenshot.png)
