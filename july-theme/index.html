@@ -12,13 +12,13 @@
   <meta name="color:Header" content="#333333">
   <meta name="color:Header Link" content="#5DDCCE">
   <meta name="color:Header Link Hover" content="#E4E8A7">
-  <meta name="color:Sidebar Link" content="#5DDCCE">
+  <meta name="color:Sidebar Link" content="#c0c0c0">
   <meta name="color:Sidebar Link Hover" content="#E4E8A7">
-  <meta name="color:Content Background" content="#ffffff">
+  <meta name="color:Content Background" content="#efefef">
   <meta name="color:Text" content="#444444">
   <meta name="color:Link" content="#4388A8">
   <meta name="color:Link Hover" content="#58AFC9">
-  <meta name="color:Border" content="#111111">
+  <meta name="color:Border" content="#333333">
   <meta name="color:Post Footer Border" content="#dddddd">
   <meta name="color:Post Footer Background" content="#eeeeee">
   <meta name="color:Title" content="#4388A8">
@@ -45,7 +45,7 @@
       color: {color:Link Hover};
     }
     a#install-theme {
-      position: absolute;
+      position: fixed;
       z-index: 1031;
       right: 3px;
       padding: 0 0.3em;
@@ -96,7 +96,7 @@
       margin-bottom: 0;
     }
     article.photo, article.photoset {
-      width: 500px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -134,13 +134,15 @@
       color: {color:Sidebar Link};
     }
     aside a:hover, aside a:focus {
+      text-decoration: none;
       color: {color:Sidebar Link Hover};
     }
     .navbar-fixed-top {
       text-shadow: 1px 1px 1px #222;
     }
     a.navbar-brand, a.navbar-brand:link, a.navbar-brand:active,
-    a.navbar-brand:visited, .navbar-nav > li > a {
+    a.navbar-brand:visited, .navbar-nav > li > a,
+    #footer a, #footer a:link, #footer a:active, #footer a:visited {
       color: {color:Header Link};
     }
     .navbar-nav > li > a {
@@ -148,18 +150,36 @@
       padding-bottom: 20px;
     }
     .navbar-nav > li > a:hover, .navbar-nav > li > a:focus,
-    a.navbar-brand:hover, a.navbar-brand:focus {
+    a.navbar-brand:hover, a.navbar-brand:focus,
+    #footer a:hover, #footer a:focus {
+      text-decoration: none;
       color: {color:Header Link Hover};
     }
     #logo {
       display: inline-block;
       border: 1px solid {color:Border};
     }
+    hr {
+      border-color: {color:Border};
+    }
     .navbar, #footer {
       background-color: {color:Header};
     }
+    .navbar-toggle {
+      border-color: {color:Header Link};
+    }
+    .navbar-toggle .icon-bar {
+      background-color: {color:Header Link};
+    }
+    .navbar-toggle:hover, .navbar-toggle:focus {
+      background-color: {color:Header Link Hover};
+    }
     #footer {
       margin-top: 40px;
+      padding: 40px;
+    }
+    #footer ul {
+      margin: 0;
     }
     ul.inline {
       padding-left: 0;
@@ -177,6 +197,19 @@
       font-size: 12px;
       color: #999;
       margin: 10px 0;
+    }
+    @media (max-width: 768px) {
+      a#install-theme {
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+      aside {
+        width: auto !important;
+      }
+      aside.affix {
+        position: relative;
+      }
     }
   </style>
 </head>
@@ -224,6 +257,8 @@
         <div class="col-lg-2 col-offset-2">
           <aside class="affix-top" data-spy="affix" data-offset-top="150">
             <div id="tagCloud"></div><script type="text/javascript" src="http://post-theory.com/public/tagcloud/{text:Tumblr URL}?sort=alphabetical&amp;math=modlog&amp;nowrap=soft&amp;pad=4" async="async"></script>
+            <hr>
+            <a href="/rss">RSS</a>
           </aside>
         </div>
         <div class="col-lg-6">
