@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Theme by Sarah Vessels -->
+  <!-- Get this Tumblr theme and more free from https://github.com/moneypenny/tumblr-themes -->
+  <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="text:Tumblr URL" content="cheshire137">
+  <meta name="color:Background Color" content="#222222">
+  <meta name="image:Background Image" content="http://static.tumblr.com/w10eljr/imOmqm28u/tweed.png">
+  <meta name="color:Header" content="#333333">
+  <meta name="color:Header Link" content="#5DDCCE">
+  <meta name="color:Header Link Hover" content="#E4E8A7">
+  <meta name="color:Sidebar Link" content="#5DDCCE">
+  <meta name="color:Sidebar Link Hover" content="#E4E8A7">
+  <meta name="color:Content Background" content="#ffffff">
+  <meta name="color:Text" content="#444444">
+  <meta name="color:Link" content="#4388A8">
+  <meta name="color:Link Hover" content="#58AFC9">
+  <meta name="color:Border" content="#111111">
+  <meta name="color:Post Footer Border" content="#dddddd">
+  <meta name="color:Post Footer Background" content="#eeeeee">
+  <meta name="color:Title" content="#4388A8">
+  <meta name="color:Description" content="#CD85B0">
+  <meta name="text:Reblog Title" content="Reblog">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {block:Description}
+    <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}">
+  {/block:Description}
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    a, a:link, a:visited, a:active {
+      -webkit-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      -moz-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      -ms-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      -o-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+      color: {color:Link};
+    }
+    a:hover, a:focus {
+      color: {color:Link Hover};
+    }
+    a#install-theme {
+      position: absolute;
+      z-index: 1031;
+      right: 3px;
+      padding: 0 0.3em;
+      text-decoration: none;
+      top: 26px;
+      color: #fff;
+      border: 1px solid rgba(0,0,0,0.18);
+      background: #3e3e3e;
+      background: rgba(0,0,0,0.38);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.08);
+      font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+    }
+    body {
+      padding-top: 60px;
+      background-color: {color:Background Color};
+      background-image: url('{image:Background Image}');
+      color: {color:Text};
+    }
+    article {
+      margin-top: 40px;
+      border-width: 1px;
+      border-style: solid;
+      color: {color:Text};
+      border-color: {color:Border};
+      background-color: {color:Content Background};
+    }
+    article .padding {
+      padding: 20px;
+    }
+    article .padding > *:first-child {
+      margin-top: 0;
+    }
+    article .padding > *:last-child {
+      margin-bottom: 0;
+    }
+    article footer {
+      font-size: 12px;
+      padding: 20px;
+      -webkit-box-shadow: inset 0px 3px 5px -3px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0px 3px 5px -3px rgba(0, 0, 0, 0.1);
+      border-top: 1px solid {color:Post Footer Border};
+      background-color: {color:Post Footer Background};
+    }
+    article footer ul {
+      margin-bottom: 0;
+    }
+    article.photo, article.photoset {
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    article.photo .padding .caption, article.photoset .padding .caption,
+    .photo-and-caption + .photo-and-caption {
+      margin-top: 20px;
+    }
+    .photo-and-caption + .photo-and-caption {
+      padding-top: 20px;
+      border-top: 1px solid {color:Post Footer Border};
+    }
+    article.photo div.photo, article.photoset div.photo {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      -webkit-box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
+      -moz-box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
+      box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
+      padding: 10px 10px 20px 10px;
+      border: 1px solid {color:Post Footer Border};
+    }
+    article.link .description {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%;
+    }
+    aside {
+      margin-top: 40px;
+    }
+    aside.affix {
+      margin-top: 0;
+    }
+    aside a, aside a:link, aside a:visited, aside a:active {
+      color: {color:Sidebar Link};
+    }
+    aside a:hover, aside a:focus {
+      color: {color:Sidebar Link Hover};
+    }
+    .navbar-fixed-top {
+      text-shadow: 1px 1px 1px #222;
+    }
+    a.navbar-brand, a.navbar-brand:link, a.navbar-brand:active,
+    a.navbar-brand:visited, .navbar-nav > li > a {
+      color: {color:Header Link};
+    }
+    .navbar-nav > li > a {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .navbar-nav > li > a:hover, .navbar-nav > li > a:focus,
+    a.navbar-brand:hover, a.navbar-brand:focus {
+      color: {color:Header Link Hover};
+    }
+    #logo {
+      display: inline-block;
+      border: 1px solid {color:Border};
+    }
+    .navbar, #footer {
+      background-color: {color:Header};
+    }
+    #footer {
+      margin-top: 40px;
+    }
+    ul.inline {
+      padding-left: 0;
+      margin-left: 0;
+    }
+    ul.inline li {
+      margin-left: 0;
+      list-style: none;
+      display: inline-block;
+    }
+    ul.inline li + li {
+      margin-left: 1em;
+    }
+    ul.exif {
+      font-size: 12px;
+      color: #999;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="container">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="{PortraitURL-30}" width="30" height="30" alt="{Title}" id="logo">
+        {Title}
+      </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav navbar-nav">
+          {block:HasPages}
+            {block:Pages}
+              <li>
+                <a href="{URL}">{Label}</a>
+              </li>
+            {/block:Pages}
+          {/block:HasPages}
+          {block:SubmissionsEnabled}
+            <li>
+              <a href="/submit">{SubmitLabel}</a>
+            </li>
+          {/block:SubmissionsEnabled}
+          {block:AskEnabled}
+            <li>
+              <a href="/ask">{AskLabel}</a>
+            </li>
+          {/block:AskEnabled}
+          <li>
+            <a href="/archive">Archive</a>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="main-container">
+    <div id="content">
+      <div class="row">
+        <div class="col-lg-2 col-offset-2">
+          <aside class="affix-top" data-spy="affix" data-offset-top="150">
+            <div id="tagCloud"></div><script type="text/javascript" src="http://post-theory.com/public/tagcloud/{text:Tumblr URL}?sort=alphabetical&amp;math=modlog&amp;nowrap=soft&amp;pad=4" async="async"></script>
+          </aside>
+        </div>
+        <div class="col-lg-6">
+          {block:Posts}
+            <article class="{block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}">
+              <div class="padding">
+                {block:Text}
+                  {block:Title}
+                    <header>
+                      <h3><a href="{Permalink}">{Title}</a></h3>
+                    </header>
+                  {/block:Title}
+                  <section>
+                    {Body}
+                  </section>
+                {/block:Text}
+
+                {block:Photo}
+                  <div class="photo-and-caption">
+                    <div class="photo" style="max-width: {PhotoWidth-500}px">
+                      {LinkOpenTag}
+                        <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
+                      {LinkCloseTag}
+                      {block:Exif}
+                        <ul class="exif inline">
+                          {block:Camera}
+                            <li><span>Camera:</span> {Camera}</li>
+                          {/block:Camera}
+                          {block:Aperture}
+                            <li><span>Aperture:</span> {Aperture}</li>
+                          {/block:Aperture}
+                          {block:Exposure}
+                            <li><span>Exposure:</span> {Exposure}</li>
+                          {/block:Exposure}
+                          {block:FocalLength}
+                            <li><span>Focal length:</span> {FocalLength}</li>
+                          {/block:FocalLength}
+                        </ul>
+                      {/block:Exif}
+                    </div>
+                    {block:Caption}
+                      <div class="caption">{Caption}</div>
+                    {/block:Caption}
+                  </div>
+                {/block:Photo}
+
+                {block:Panorama}
+                  {LinkOpenTag}
+                    <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+                  {LinkCloseTag}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                {/block:Panorama}
+
+                {block:Photoset}
+                  {block:Photos}
+                    <div class="photo-and-caption">
+                      <div class="photo" style="max-width: {PhotoWidth-500}px">
+                        {LinkOpenTag}
+                          <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
+                        {LinkCloseTag}
+                        {block:Exif}
+                          <ul class="exif inline">
+                            {block:Camera}
+                              <li><span>Camera:</span> {Camera}</li>
+                            {/block:Camera}
+                            {block:Aperture}
+                              <li><span>Aperture:</span> {Aperture}</li>
+                            {/block:Aperture}
+                            {block:Exposure}
+                              <li><span>Exposure:</span> {Exposure}</li>
+                            {/block:Exposure}
+                            {block:FocalLength}
+                              <li><span>Focal length:</span> {FocalLength}</li>
+                            {/block:FocalLength}
+                          </ul>
+                        {/block:Exif}
+                      </div>
+                      {block:Caption}
+                        <div class="caption">{Caption}</div>
+                      {/block:Caption}
+                    </div>
+                  {/block:Photos}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                {/block:Photoset}
+
+                {block:Quote}
+                  <p class="quote-wrapper">
+                    <span class="open-quote">&ldquo;</span><span class="quote">{Quote}</span><span class="close-quote">&rdquo;</span>
+                  </p>
+
+                  {block:Source}
+                    <p class="source">{Source}</p>
+                  {/block:Source}
+                {/block:Quote}
+
+                {block:Link}
+                  <header>
+                    <h3>
+                      <a href="{URL}" class="link" {Target}>{Name}</a>
+                    </h3>
+                  </header>
+
+                  {block:Description}
+                    <div class="description">{Description}</div>
+                  {/block:Description}
+                {/block:Link}
+
+                {block:Chat}
+                  {block:Title}
+                    <header>
+                      <h3><a href="{Permalink}">{Title}</a></h3>
+                    </header>
+                  {/block:Title}
+
+                  <ul class="chat">
+                    {block:Lines}
+                      <li class="{Alt} user_{UserNumber}">
+                        {block:Label}
+                          <span class="label">{Label}</span>
+                        {/block:Label}
+
+                        {Line}
+                      </li>
+                    {/block:Lines}
+                  </ul>
+                {/block:Chat}
+
+                {block:Video}
+                  {Video-500}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                {/block:Video}
+
+                {block:Audio}
+                  {AudioPlayerBlack}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                {/block:Audio}
+              </div><!--.padding-->
+              <footer>
+                <ul class="inline">
+                  {block:Date}
+                    <li>
+                      <a href="{Permalink}">{TimeAgo}</a>
+                    </li>
+                  {/block:Date}
+                  {block:NoteCount}
+                    <li>
+                      <a href="{Permalink}">♥ {NoteCount}</a>
+                    </li>
+                  {/block:NoteCount}
+                  <li>
+                    <a href="{ReblogURL}">{text:Reblog Title}</a>
+                  </li>
+                  {block:RebloggedFrom}
+                    <li>
+                      <a href="{ReblogRootURL}">Reblog Source</a>
+                    </li>
+                  {/block:RebloggedFrom}
+                  {block:ContentSource}
+                    <li>
+                      <a href="{SourceURL}">Source</a>
+                    </li>
+                  {/block:ContentSource}
+                  {block:HighRes}
+                    <li>
+                      <a href="{PhotoURL-HighRes}">High-Res</a>
+                    </li>
+                  {/block:HighRes}
+                  {block:ExternalAudio}
+                    <li>
+                      <a href="{ExternalAudioURL}">Download</a>
+                    </li>
+                  {/block:ExternalAudio}
+                  {block:HasTags}
+                    <li>
+                      <ul class="tags inline">
+                        {block:Tags}
+                          <li>
+                            <a href="{TagURL}" class="tag">#{Tag}</a>
+                          </li>
+                        {/block:Tags}
+                      </ul>
+                    </li>
+                  {/block:HasTags}
+                </ul>
+              </footer>
+            </article>
+
+            {block:PermalinkPage}
+              {PostNotes}
+            {/block:PermalinkPage}
+          {/block:Posts}
+        </div>
+      </div>
+    </div><!--#content-->
+  </div>
+
+  <footer id="footer">
+    <div class="container">
+      <ul class="inline">
+        {block:PreviousPage}
+          <li>
+            <a href="{PreviousPage}">&lt; Previous Page</a>
+          </li>
+        {/block:PreviousPage}
+
+        {block:NextPage}
+          <li>
+            <a href="{NextPage}">Next &gt;</a>
+          </li>
+        {/block:NextPage}
+
+        {block:PermalinkPage}
+          {block:PermalinkPagination}
+            {block:NextPost}
+              <li>
+                <a href="{NextPost}">&lt; Newer Post</a>
+              </li>
+            {/block:NextPost}
+            {block:PreviousPost}
+              <li>
+                <a href="{PreviousPost}">Older Post &gt;</a>
+              </li>
+            {/block:PreviousPost}
+          {/block:PermalinkPagination}
+        {/block:PermalinkPage}
+      </ul>
+    </div>
+  </footer>
+  <a href="https://github.com/moneypenny/tumblr-themes" id="install-theme" target="_blank" title="Get the code for this theme">Install Theme</a>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      var sidebar = $('.affix-top');
+      sidebar.css('left', sidebar.offset().left + 'px');
+      sidebar.css('top', sidebar.offset().top + 'px');
+      sidebar.css('width', sidebar.width() + 'px');
+    });
+  </script>
+</body>
+</html>
