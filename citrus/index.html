@@ -8,7 +8,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="text:Tumblr URL" content="cheshire137">
   <meta name="color:Background Color" content="#f8f8f8">
-  <meta name="image:Background Image" content="">
   <meta name="color:Header" content="#ffffff">
   <meta name="color:Header Link" content="#FFA22A">
   <meta name="color:Header Link Hover" content="#E33C09">
@@ -20,8 +19,6 @@
   <meta name="color:Link" content="#E33C09">
   <meta name="color:Link Hover" content="#6CE309">
   <meta name="color:Border" content="#DCE309">
-  <meta name="color:Post Footer Border" content="#dddddd">
-  <meta name="color:Post Footer Background" content="#eeeeee">
   <meta name="color:Title" content="#4388A8">
   <meta name="color:Description" content="#CD85B0">
   <meta name="text:Reblog Title" content="Reblog">
@@ -89,31 +86,19 @@
     article .padding > *:last-child {
       margin-bottom: 0;
     }
-    article footer {
-      font-size: 12px;
-      padding: 20px;
-      -webkit-box-shadow: inset 0px 3px 5px -3px rgba(0, 0, 0, 0.1);
-      box-shadow: inset 0px 3px 5px -3px rgba(0, 0, 0, 0.1);
-      border-top: 1px solid {color:Post Footer Border};
-      background-color: {color:Post Footer Background};
-    }
-    article footer ul {
-      margin-bottom: 0;
-    }
-    article.photo, article.photoset {
+    .photo, .photoset {
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
     }
-    article.photo .padding .caption, article.photoset .padding .caption,
+    .photo .caption, .photoset .caption,
     .photo-and-caption + .photo-and-caption {
       margin-top: 20px;
     }
     .photo-and-caption + .photo-and-caption {
       padding-top: 20px;
-      border-top: 1px solid {color:Post Footer Border};
     }
-    article.photo div.photo, article.photoset div.photo {
+    .photo .photo, .photoset .photo {
       margin-left: auto;
       margin-right: auto;
       position: relative;
@@ -121,10 +106,6 @@
       -moz-box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
       box-shadow: 0 1px 5px #ddd,0 0 40px rgba(0,0,0,0.05) inset;
       padding: 10px 10px 20px 10px;
-      border: 1px solid {color:Post Footer Border};
-    }
-    article.link .description {
-      margin-top: 20px;
     }
     img {
       max-width: 100%;
@@ -210,8 +191,8 @@
       padding: 0 20px;
     }
     ol.notes li {
-      color: #999;
       margin: 0 0 10px 0;
+      color: {color:Text};
     }
     ol.notes li a, ol.notes li a:active, ol.notes li a:link,
     ol.notes li a:visited {
@@ -357,7 +338,7 @@
                 <div class="panel-body photo-and-caption">
                   <div class="photo" style="max-width: {PhotoWidth-500}px">
                     {LinkOpenTag}
-                      <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
+                      <img width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
                     {LinkCloseTag}
                     {block:Exif}
                       <ul class="exif inline">
@@ -400,7 +381,7 @@
                     <div class="photo-and-caption">
                       <div class="photo" style="max-width: {PhotoWidth-500}px">
                         {LinkOpenTag}
-                          <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
+                          <img width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
                         {LinkCloseTag}
                         {block:Exif}
                           <ul class="exif inline">
@@ -515,10 +496,16 @@
                   {text:Reblog Title}
                 </a>
                 {block:RebloggedFrom}
-                  <a href="{ReblogRootURL}">Reblog Source</a>
+                  <a href="{ReblogRootURL}">
+                    <i class="glyphicon glyphicon-home"></i>
+                    Reblog Source
+                  </a>
                 {/block:RebloggedFrom}
                 {block:ContentSource}
-                  <a href="{SourceURL}">Source</a>
+                  <a href="{SourceURL}">
+                    <i class="glyphicon glyphicon-home"></i>
+                    Source
+                  </a>
                 {/block:ContentSource}
                 {block:HighRes}
                   <a href="{PhotoURL-HighRes}">
@@ -547,14 +534,48 @@
               {PostNotes}
             {/block:PermalinkPage}
           {/block:Posts}
+
+          <footer id="footer">
+            <ul class="inline">
+              {block:PreviousPage}
+                <li>
+                  <a href="{PreviousPage}">&lt; Previous Page</a>
+                </li>
+              {/block:PreviousPage}
+
+              {block:NextPage}
+                <li>
+                  <a href="{NextPage}">Next Page &gt;</a>
+                </li>
+              {/block:NextPage}
+
+              {block:PermalinkPage}
+                {block:PermalinkPagination}
+                  {block:NextPost}
+                    <li>
+                      <a href="{NextPost}">&lt; Newer Post</a>
+                    </li>
+                  {/block:NextPost}
+                  {block:PreviousPost}
+                    <li>
+                      <a href="{PreviousPost}">Older Post &gt;</a>
+                    </li>
+                  {/block:PreviousPost}
+                {/block:PermalinkPagination}
+              {/block:PermalinkPage}
+            </ul>
+          </footer>
         </div>
         <div class="col-lg-3 col-lg-offset-1">
           {block:Twitter}
             <aside id="twitter" style="display:none;">
-              <h2>
-                <a href="http://twitter.com/{TwitterUsername}">Latest Tweets</a>
-              </h2>
+              <h2>Latest Tweets</h2>
               <div id="tweets"></div>
+              <p>
+                <a href="http://twitter.com/{TwitterUsername}">
+                  @{TwitterUsername}
+                </a>
+              </p>
             </aside>
             <script type="text/javascript">
               function recent_tweets(data) {
@@ -571,6 +592,7 @@
             </script>
           {/block:Twitter}
           <aside>
+            <h2>Tags</h2>
             <div id="tagCloud"></div><script type="text/javascript" src="http://post-theory.com/public/tagcloud/{text:Tumblr URL}?sort=alphabetical&amp;math=modlog&amp;nowrap=soft&amp;pad=4" async="async"></script>
           </aside>
           {block:Following}
@@ -601,38 +623,6 @@
     </div><!--#content-->
   </div>
 
-  <footer id="footer">
-    <div class="container">
-      <ul class="inline">
-        {block:PreviousPage}
-          <li>
-            <a href="{PreviousPage}">&lt; Previous Page</a>
-          </li>
-        {/block:PreviousPage}
-
-        {block:NextPage}
-          <li>
-            <a href="{NextPage}">Next &gt;</a>
-          </li>
-        {/block:NextPage}
-
-        {block:PermalinkPage}
-          {block:PermalinkPagination}
-            {block:NextPost}
-              <li>
-                <a href="{NextPost}">&lt; Newer Post</a>
-              </li>
-            {/block:NextPost}
-            {block:PreviousPost}
-              <li>
-                <a href="{PreviousPost}">Older Post &gt;</a>
-              </li>
-            {/block:PreviousPost}
-          {/block:PermalinkPagination}
-        {/block:PermalinkPage}
-      </ul>
-    </div>
-  </footer>
   <a href="https://github.com/moneypenny/tumblr-themes" id="install-theme" target="_blank" title="Get the code for this theme">Install Theme</a>
   {block:Twitter}
     <script type="text/javascript" src="/tweets.js"></script>
