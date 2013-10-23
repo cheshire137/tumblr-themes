@@ -4,6 +4,8 @@ Feel free to use these as they come or modify them yourself.
 
 ## Citrus
 
+![Screenshot of Citrus](http://github.com/moneypenny/tumblr-themes/raw/master/citrus/screenshot.png)
+
 Light theme with bright accents. Customizable colors with the default colors
 coming from the [Citrus palette](http://www.colourlovers.com/palette/3090033/Citrus?sAC=1). Sidebar on the right. Includes a
 [tag cloud](http://post-theory.com/tumblr-tag-cloud-javascript) in the sidebar.
