@@ -43,23 +43,6 @@
     a:hover, a:focus {
       color: {color:Link Hover};
     }
-    a#install-theme {
-      position: fixed;
-      z-index: 1031;
-      right: 3px;
-      padding: 0 0.3em;
-      text-decoration: none;
-      top: 26px;
-      color: #fff;
-      border: 1px solid rgba(0,0,0,0.18);
-      background: #3e3e3e;
-      background: rgba(0,0,0,0.38);
-      text-shadow: 1px 1px 0 rgba(0,0,0,0.08);
-      font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border-radius: 2px;
-    }
     body {
       padding-top: 60px;
       font-weight: 300;
@@ -488,7 +471,7 @@
                 {/block:Date}
                 {block:NoteCount}
                   <a href="{Permalink}">
-                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-comment"></i>
                     {NoteCount}
                   </a>
                 {/block:NoteCount}
@@ -619,12 +602,18 @@
               </table>
             </aside>
           {/block:Following}
+          <aside>
+            <p>
+              <a href="https://github.com/moneypenny/tumblr-themes" target="_blank" title="Get the code for this Tumblr theme">
+                <i class="glyphicon glyphicon-gift"></i>
+                Use This Theme
+              </a>
+            </p>
+          </aside>
         </div>
       </div>
     </div><!--#content-->
   </div>
-
-  <a href="https://github.com/moneypenny/tumblr-themes" id="install-theme" target="_blank" title="Get the code for this theme">Install Theme</a>
   {block:Twitter}
     <script type="text/javascript" src="/tweets.js"></script>
   {/block:Twitter}
