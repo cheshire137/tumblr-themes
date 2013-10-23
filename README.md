@@ -2,6 +2,13 @@
 
 Feel free to use these as they come or modify them yourself.
 
+## Citrus
+
+Light theme with bright accents. Customizable colors with the default colors
+coming from the [Citrus palette](http://www.colourlovers.com/palette/3090033/Citrus?sAC=1). Sidebar on the right. Includes a
+[tag cloud](http://post-theory.com/tumblr-tag-cloud-javascript) in the sidebar.
+Has a search bar in the header. Lists your followed blogs in the sidebar.
+
 ## Graystrap
 
 ![Screenshot of Graystrap](http://github.com/moneypenny/tumblr-themes/raw/master/graystrap/screenshot.png)
