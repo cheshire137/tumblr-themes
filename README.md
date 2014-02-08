@@ -2,6 +2,14 @@
 
 Feel free to use these as they come or modify them yourself.
 
+## Coral Bubbles
+
+![Screenshot of Citrus](http://github.com/moneypenny/tumblr-themes/raw/master/coral-bubbles/screenshot.png)
+
+Dark theme built with [Twitter Bootstrap](http://getbootstrap.com/) and [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons. Color scheme based on the [Coral Bubbles palette](http://www.colourlovers.com/palette/3199031/Coral_Bubbles?sAC=1). Sidebar on the right. Includes a
+[tag cloud](http://post-theory.com/tumblr-tag-cloud-javascript) in the sidebar.
+Has a search bar in the header. Lists your followed blogs in the sidebar.
+
 ## Citrus
 
 ![Screenshot of Citrus](http://github.com/moneypenny/tumblr-themes/raw/master/citrus/screenshot.png)
