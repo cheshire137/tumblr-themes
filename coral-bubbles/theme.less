@@ -1,0 +1,177 @@
+// Cosmo 3.1.0
+// Bootswatch
+// -----------------------------------------------------
+
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+@import "bootstrap/bootstrap.less";
+
+a, a:link, a:visited, a:active {
+  -webkit-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  -moz-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  -ms-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  -o-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+aside {
+  margin-bottom: 40px;
+}
+
+body {
+  padding-top: 80px;
+}
+
+.followed-link {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+#footer {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: block;
+  height: 51px;
+  line-height: 51px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.page-header {
+  color: lighten(@body-bg, 20%);
+}
+
+.panel {
+  &.photo {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+  }
+}
+
+.panel-body {
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  .photo, .caption {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .photo + .caption {
+    margin-top: @line-height-computed;
+  }
+
+  .caption {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  img.photo {
+    border-radius: @border-radius-base;
+  }
+}
+
+.panel-body + .panel-footer {
+  border-top: 1px solid @hr-border;
+}
+
+.panel-heading {
+  .panel-title {
+    font-size: @font-size-base;
+    line-height: @line-height-computed;
+    margin: 0;
+  }
+}
+
+.panel-footer {
+  font-size: @font-size-small;
+  padding: 10px 15px;
+}
+
+.panel-footer a {
+  display: inline-block;
+}
+
+.panel-footer a + a {
+  margin-left: 1em;
+}
+
+.panel-success, .panel-info, .panel-warning, .panel-danger, .panel-primary {
+  .panel-title {
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.panel-success .panel-body a, .panel-success .panel-body a:link,
+.panel-success .panel-body a:visited,
+.panel-success .panel-body a:active,
+.panel-success .panel-footer a, .panel-success .panel-footer a:link,
+.panel-success .panel-footer a:visited,
+.panel-success .panel-footer a:active {
+  color: @brand-success;
+}
+
+.panel-success .panel-body a:hover, .panel-success .panel-body a:focus,
+.panel-success .panel-footer a:hover, .panel-success .panel-footer a:focus {
+  color: darken(@brand-success, 10%);
+}
+
+.panel-info .panel-body a, .panel-info .panel-body a:link,
+.panel-info .panel-body a:visited,
+.panel-info .panel-body a:active,
+.panel-info .panel-footer a, .panel-info .panel-footer a:link,
+.panel-info .panel-footer a:visited,
+.panel-info .panel-footer a:active {
+  color: @brand-info;
+}
+
+.panel-info .panel-body a:hover, .panel-info .panel-body a:focus,
+.panel-info .panel-footer a:hover, .panel-info .panel-footer a:focus {
+  color: darken(@brand-info, 10%);
+}
+
+.panel-danger .panel-body a, .panel-danger .panel-body a:link,
+.panel-danger .panel-body a:visited,
+.panel-danger .panel-body a:active,
+.panel-danger .panel-footer a, .panel-danger .panel-footer a:link,
+.panel-danger .panel-footer a:visited,
+.panel-danger .panel-footer a:active {
+  color: @brand-danger;
+}
+
+.panel-danger .panel-body a:hover, .panel-danger .panel-body a:focus,
+.panel-danger .panel-footer a:hover, .panel-danger .panel-footer a:focus {
+  color: darken(@brand-danger, 10%);
+}
+
+.panel-warning .panel-body a, .panel-warning .panel-body a:link,
+.panel-warning .panel-body a:visited,
+.panel-warning .panel-body a:active,
+.panel-warning .panel-footer a, .panel-warning .panel-footer a:link,
+.panel-warning .panel-footer a:visited,
+.panel-warning .panel-footer a:active {
+  color: @brand-warning;
+}
+
+.panel-warning .panel-body a:hover, .panel-warning .panel-body a:focus,
+.panel-warning .panel-footer a:hover, .panel-warning .panel-footer a:focus {
+  color: darken(@brand-warning, 10%);
+}
+
+.photo {
+  img.photo {
+    max-width: 100%;
+    border: 1px solid @table-border-color;
+  }
+}
