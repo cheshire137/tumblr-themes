@@ -17,12 +17,18 @@ var generate_theme_less = function(dir, file_name, less_options) {
               pipe(gulp.dest(dir));
 };
 
+gulp.task('coral-bubbles-css', function() {
+  var less_options = {paths: ['coral-bubbles/bootstrap']};
+  return generate_theme_less('coral-bubbles', 'theme', less_options);
+});
+
 gulp.task('tulip-world-css', function() {
   return generate_theme_less('tulip-world', 'theme');
 });
 
 gulp.task('watch', function() {
   gulp.watch(['tulip-world/theme.less'], ['tulip-world-css']);
+  gulp.watch(['coral-bubbles/theme.less'], ['coral-bubbles-css']);
 });
 
 gulp.task('default', ['watch']);
