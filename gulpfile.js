@@ -7,11 +7,18 @@ var minifyCSS = require('gulp-minify-css');
 
 var on_error = function (err) { console.error(err.message); };
 
-gulp.task('tulip-world-css', function() {
-  return gulp.src('tulip-world/theme.less').
-              pipe(less().on('error', on_error)).
+var generate_theme_less = function(dir, file_name, less_options) {
+  if (typeof less_options === 'undefined') {
+    less_options = {};
+  }
+  return gulp.src(dir + '/' + file_name + '.less').
+              pipe(less(less_options).on('error', on_error)).
               pipe(minifyCSS().on('error', on_error)).
-              pipe(gulp.dest('tulip-world'));
+              pipe(gulp.dest(dir));
+};
+
+gulp.task('tulip-world-css', function() {
+  return generate_theme_less('tulip-world', 'theme');
 });
 
 gulp.task('watch', function() {
