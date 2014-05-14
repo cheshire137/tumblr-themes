@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Theme by Sarah Vessels -->
+  <!-- Get this Tumblr theme and more free from https://github.com/moneypenny/tumblr-themes -->
+  <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="text:tumblrUserName" content="cheshire137">
+  <meta name="text:reblogTitle" content="Reblog">
+  <meta name="text:rssTitle" content="Subscribe">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {block:Description}
+    <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}">
+  {/block:Description}
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <style type="text/css">
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="{PortraitURL-30}" width="30" height="30" alt="{Title}" id="logo" class="img-circle">
+          {Title}
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          {block:HasPages}
+            {block:Pages}
+              <li>
+                <a href="{URL}">{Label}</a>
+              </li>
+            {/block:Pages}
+          {/block:HasPages}
+          {block:SubmissionsEnabled}
+            <li>
+              <a href="/submit">{SubmitLabel}</a>
+            </li>
+          {/block:SubmissionsEnabled}
+          {block:AskEnabled}
+            <li>
+              <a href="/ask">{AskLabel}</a>
+            </li>
+          {/block:AskEnabled}
+          <li>
+            <a href="/archive">Archive</a>
+          </li>
+          <li>
+            <a href="/rss">{text:rssTitle}</a>
+          </li>
+        </ul>
+        <form action="/search" method="GET" class="navbar-form navbar-right navbar-input-group" role="search">
+          <div class="form-group">
+            <label class="sr-only" for="navbar-search-query">Search query:</label>
+            <input type="search" name="q" value="{SearchQuery}" class="form-control" placeholder="Search" id="navbar-search-query">
+          </div>
+          <button type="submit" class="btn btn-default">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container" id="main-container">
+    <div id="content">
+      <div class="row">
+        <div class="col-md-8">
+          {block:TagPage}
+            <div class="page-header">
+              <h1>Posts Tagged "{Tag}"</h1>
+            </div>
+          {/block:TagPage}
+          {block:Posts}
+            <div class="panel panel-default {block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Video}video panel-info{/block:Video}{block:Audio}audio panel-info{/block:Audio}">
+              {block:Text}
+                {block:Title}
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <a href="{Permalink}">
+                        <i class="fa fa-align-justify"></i>
+                        {Title}
+                      </a>
+                    </h3>
+                  </div>
+                {/block:Title}
+                <div class="panel-body">
+                  {Body}
+                </div>
+              {/block:Text}
+
+              {block:Photo}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{Permalink}">
+                      <i class="fa fa-picture-o"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div class="panel-body photo-and-caption">
+                  <div class="photo" style="max-width: {PhotoWidth-500}px">
+                    {LinkOpenTag}
+                      <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
+                    {LinkCloseTag}
+                    {block:Exif}
+                      <ul class="exif inline">
+                        {block:Camera}
+                          <li><span>Camera:</span> {Camera}</li>
+                        {/block:Camera}
+                        {block:Aperture}
+                          <li><span>Aperture:</span> {Aperture}</li>
+                        {/block:Aperture}
+                        {block:Exposure}
+                          <li><span>Exposure:</span> {Exposure}</li>
+                        {/block:Exposure}
+                        {block:FocalLength}
+                          <li><span>Focal length:</span> {FocalLength}</li>
+                        {/block:FocalLength}
+                      </ul>
+                    {/block:Exif}
+                  </div>
+                  {block:Caption}
+                    <div class="caption" style="max-width: {PhotoWidth-500}px">{Caption}</div>
+                  {/block:Caption}
+                </div>
+              {/block:Photo}
+
+              {block:Panorama}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{Permalink}">
+                      <i class="fa fa-picture-o"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div class="panel-body">
+                  {LinkOpenTag}
+                    <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+                  {LinkCloseTag}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                </div>
+              {/block:Panorama}
+
+              {block:Photoset}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{Permalink}">
+                      <i class="fa fa-picture-o"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div class="panel-body photoset">
+                  {block:Photos}
+                    <div class="photo-and-caption">
+                      <div class="photo" style="max-width: {PhotoWidth-500}px">
+                        {LinkOpenTag}
+                          <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
+                        {LinkCloseTag}
+                        {block:Exif}
+                          <ul class="exif inline">
+                            {block:Camera}
+                              <li><span>Camera:</span> {Camera}</li>
+                            {/block:Camera}
+                            {block:Aperture}
+                              <li><span>Aperture:</span> {Aperture}</li>
+                            {/block:Aperture}
+                            {block:Exposure}
+                              <li><span>Exposure:</span> {Exposure}</li>
+                            {/block:Exposure}
+                            {block:FocalLength}
+                              <li><span>Focal length:</span> {FocalLength}</li>
+                            {/block:FocalLength}
+                          </ul>
+                        {/block:Exif}
+                      </div>
+                      {block:Caption}
+                        <div class="caption">{Caption}</div>
+                      {/block:Caption}
+                    </div>
+                  {/block:Photos}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                </div>
+              {/block:Photoset}
+
+              {block:Quote}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{Permalink}">
+                      <i class="fa fa-quote-left"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div class="panel-body">
+                  <p class="quote-wrapper">
+                    <span class="open-quote">&ldquo;</span><span class="quote">{Quote}</span><span class="close-quote">&rdquo;</span>
+                  </p>
+
+                  {block:Source}
+                    <p class="source">{Source}</p>
+                  {/block:Source}
+                </div>
+              {/block:Quote}
+
+              {block:Link}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{URL}" class="link" {Target}>
+                      <i class="fa fa-link"></i>
+                      {Name}
+                    </a>
+                  </h3>
+                </div>
+
+                {block:Description}
+                  <div class="panel-body description">{Description}</div>
+                {/block:Description}
+              {/block:Link}
+
+              {block:Chat}
+                {block:Title}
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <a href="{Permalink}">
+                        <i class="fa fa-list-ul"></i>
+                        {Title}
+                      </a>
+                    </h3>
+                  </div>
+                {/block:Title}
+
+                <div class="panel-body">
+                  <ul class="chat">
+                    {block:Lines}
+                      <li class="{Alt} user_{UserNumber}">
+                        {block:Label}
+                          <span class="label">{Label}</span>
+                        {/block:Label}
+
+                        {Line}
+                      </li>
+                    {/block:Lines}
+                  </ul>
+                </div>
+              {/block:Chat}
+
+              {block:Video}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{Permalink}">
+                      <i class="fa fa-video-camera"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div class="panel-body">
+                  {Video-500}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                </div>
+              {/block:Video}
+
+              {block:Audio}
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a href="{Permalink}">
+                      <i class="fa fa-volume-up"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div class="panel-body">
+                  {AudioPlayerWhite}
+
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                </div>
+              {/block:Audio}
+
+              <div class="panel-footer">
+                {block:Date}
+                  <a href="{Permalink}">
+                    <i class="fa fa-clock-o"></i>
+                    {TimeAgo}
+                  </a>
+                {/block:Date}
+                {block:NoteCount}
+                  <a href="{Permalink}">
+                    <i class="fa fa-heart"></i>
+                    {NoteCount}
+                  </a>
+                {/block:NoteCount}
+                <a href="{ReblogURL}">
+                  <i class="fa fa-retweet"></i>
+                  {text:reblogTitle}
+                </a>
+                {block:RebloggedFrom}
+                  <a href="{ReblogRootURL}">Reblog Source</a>
+                {/block:RebloggedFrom}
+                {block:ContentSource}
+                  <a href="{SourceURL}">Source</a>
+                {/block:ContentSource}
+                {block:HighRes}
+                  <a href="{PhotoURL-HighRes}">
+                    <i class="fa fa-search-plus"></i>
+                    High-Res
+                  </a>
+                {/block:HighRes}
+                {block:ExternalAudio}
+                  <a href="{ExternalAudioURL}">
+                    <i class="fa fa-download"></i>
+                    Download
+                  </a>
+                {/block:ExternalAudio}
+                {block:HasTags}
+                  {block:Tags}
+                    <a href="{TagURL}" class="tag">
+                      <i class="fa fa-tag"></i>
+                      {Tag}
+                    </a>
+                  {/block:Tags}
+                {/block:HasTags}
+              </div>
+            </div><!--panel-->
+
+            {block:PermalinkPage}
+              {PostNotes}
+            {/block:PermalinkPage}
+          {/block:Posts}
+        </div>
+        <div class="col-md-4">
+          {block:Twitter}
+            <aside id="twitter" style="display:none;">
+              <h2>
+                <a href="http://twitter.com/{TwitterUsername}">
+                  <i class="fa fa-twitter"></i>
+                  Latest Tweets
+                </a>
+              </h2>
+              <div id="tweets"></div>
+            </aside>
+            <script type="text/javascript">
+              function recent_tweets(data) {
+                for (i=0; i<data.length; i++) {
+                  document.getElementById("tweets").innerHTML =
+                      document.getElementById("tweets").innerHTML +
+                      '<a href="http://twitter.com/{TwitterUsername}/status/' +
+                      (data[i].id_str ? data[i].id_str : data[i].id) +
+                      '"><div class="content">' + data[i].text +
+                      '</div></a>';
+                }
+                document.getElementById("twitter").style.display = 'block';
+              }
+            </script>
+          {/block:Twitter}
+          <aside>
+            <div id="tagCloud"></div><script type="text/javascript" src="http://post-theory.com/public/tagcloud/{text:tumblrUserName}?sort=alphabetical&amp;math=modlog&amp;nowrap=soft&amp;pad=4" async="async"></script>
+          </aside>
+          {block:Following}
+            <aside>
+              <p class="followed-list">
+                {block:Followed}
+                  <a href="{FollowedURL}" class="followed-link" data-toggle="tooltip" title="{FollowedName}">
+                    <img class="img-circle" src="{FollowedPortraitURL-24}" alt="{FollowedName}">
+                  </a>
+                {/block:Followed}
+              </p>
+            </aside>
+          {/block:Following}
+          <aside>
+            <a href="https://github.com/moneypenny/tumblr-themes" id="install-theme" target="_blank" title="Get the code for this theme" data-toggle="tooltip">
+              <i class="fa fa-gift"></i>
+              Install Theme
+            </a>
+          </aside>
+        </div>
+      </div>
+    </div><!--#content-->
+  </div>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="clearfix">
+            {block:PreviousPage}
+              <a href="{PreviousPage}" class="pull-left nowrap">
+                <i class="fa fa-arrow-left"></i> Previous Page
+              </a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+              <a href="{NextPage}" class="pull-right nowrap">
+                Next Page <i class="fa fa-arrow-right"></i>
+              </a>
+            {/block:NextPage}
+
+            {block:PermalinkPage}
+              {block:PermalinkPagination}
+                {block:NextPost}
+                  <a href="{NextPost}" class="pull-left nowrap">
+                    <i class="fa fa-arrow-left"></i> Newer Post
+                  </a>
+                {/block:NextPost}
+
+                {block:PreviousPost}
+                  <a href="{PreviousPost}" class="pull-right nowrap">
+                    Older Post <i class="fa fa-arrow-right"></i>
+                  </a>
+                {/block:PreviousPost}
+              {/block:PermalinkPagination}
+            {/block:PermalinkPage}
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  {block:Twitter}
+    <script type="text/javascript" src="/tweets.js"></script>
+  {/block:Twitter}
+  <script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('body').tooltip({selector: '[data-toggle="tooltip"]'});
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+@body-bg: #FFFFFA;
+@subtle-color: #F1CBBE;
+@link-color: #F94489;
+@link-hover-color: #D41405;
+@text-color: #000A00;
+@light-gray: #ccc;
+
+a {
+  &, &:link {
+    color: @link-color;
+  }
+
+  &:visited, &:active {
+    color: darken(@link-color, 10%);
+  }
+
+  &:focus, &:hover {
+    color: @link-hover-color;
+  }
+}
+
+body {
+  background-color: @body-bg;
+  color: @text-color;
+}
+
+.navbar-brand {
+  padding: 10px 15px 0 15px;
+}
+
+.navbar-input-group {
+  font-size: 0;
+
+  .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+  }
+
+  input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.panel {
+  .panel-footer {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-color: transparent;
+    font-size: 12px;
+
+    a {
+      & + a {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  .panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-color: @light-gray;
+  }
+
+  &.panel-default {
+    border-color: transparent;
+    border-radius: 0;
+
+    & > .panel-heading {
+      background-color: @subtle-color;
+      border-bottom-color: transparent;
+    }
+  }
+
+  & + .panel {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
