@@ -27,8 +27,11 @@ gulp.task('tulip-world-css', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['tulip-world/theme.less'], ['tulip-world-css']);
-  gulp.watch(['coral-bubbles/theme.less'], ['coral-bubbles-css']);
+  var themes = ['tulip-world', 'coral-bubbles'];
+  for (var i=0; i<themes.length; i++) {
+    var theme = themes[i];
+    gulp.watch([theme + '/theme.less'], [theme + '-css']);
+  }
 });
 
 gulp.task('default', ['watch']);
