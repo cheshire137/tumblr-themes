@@ -4,8 +4,15 @@
 @link-hover-color: #D41405;
 @text-color: #000A00;
 @light-gray: #ccc;
+@footer-bg: #f5f5f5;
 
 a {
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
   &, &:link {
     color: @link-color;
   }
@@ -16,30 +23,44 @@ a {
 
   &:focus, &:hover {
     color: @link-hover-color;
+    text-decoration: none;
   }
 }
 
 body {
-  background-color: @body-bg;
+  background: @body-bg url('http://static.tumblr.com/w10eljr/vsyn5ki0f/4298295.png');
   color: @text-color;
 }
 
-.navbar-brand {
-  padding: 10px 15px 0 15px;
+#main-container {
+  padding-top: 15px;
+  background-color: @body-bg;
+  background-color: rgba(255,255,250,0.9);
 }
 
-.navbar-input-group {
-  font-size: 0;
+.navbar {
+  margin-bottom: 0;
 
-  .btn {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: 0;
+  .navbar-brand {
+    padding: 10px 15px 0 15px;
   }
 
-  input {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  &.navbar-default {
+    background-color: @link-color;
+
+    &, a, a:link, a:active, a:visited {
+      color: white;
+    }
+
+    a:hover, a:focus, .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
+      color: @subtle-color;
+    }
+  }
+
+  .navbar-nav {
+    &.navbar-right {
+      margin-right: -15px;
+    }
   }
 }
 
@@ -49,10 +70,17 @@ body {
     border-bottom-right-radius: 0;
     border-top-color: transparent;
     font-size: 12px;
+    background-color: @footer-bg;
 
     a {
+      color: darken(@footer-bg, 40%);
+
       & + a {
         margin-left: 1em;
+      }
+
+      &:hover, &:focus {
+        color: @link-color;
       }
     }
   }
@@ -68,7 +96,7 @@ body {
     border-radius: 0;
 
     & > .panel-heading {
-      background-color: @subtle-color;
+      background-color: lighten(@subtle-color, 10%);
       border-bottom-color: transparent;
     }
   }
