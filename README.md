@@ -8,7 +8,7 @@ Feel free to use these as they come or modify them yourself.
 
 ![Screenshot of Tulip World](http://github.com/moneypenny/tumblr-themes/raw/master/tulip-world/screenshot.png)
 
-Uses [a tulips world palette](http://www.colourlovers.com/palette/3353724/a_tulips_world?sAC=1). No sidebar, single column. Tags and followed users listed in drop-down menus in the main navigation. Search bar in header.
+Uses [a tulips world palette](http://www.colourlovers.com/palette/3353724/a_tulips_world?sAC=1) and [Fresh Snow background](http://subtlepatterns.com/fresh-snow/). No sidebar, single column. Tags and followed users listed in drop-down menus in the main navigation. Search bar in header.
 
 ### Coral Bubbles
 
