@@ -4,6 +4,12 @@ Feel free to use these as they come or modify them yourself.
 
 ## Themes
 
+### Tulip World
+
+![Screenshot of Tulip World](http://github.com/moneypenny/tumblr-themes/raw/master/tulip-world/screenshot.png)
+
+Uses [a tulips world palette](http://www.colourlovers.com/palette/3353724/a_tulips_world?sAC=1). No sidebar, single column. Tags and followed users listed in drop-down menus in the main navigation. Search bar in header.
+
 ### Coral Bubbles
 
 ![Screenshot of Citrus](http://github.com/moneypenny/tumblr-themes/raw/master/coral-bubbles/screenshot.png)
