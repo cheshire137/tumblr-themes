@@ -16,11 +16,9 @@
   {block:Description}
     <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}">
   {/block:Description}
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="all">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <style type="text/css">
-  a{-webkit-transition:all .25s ease-in-out;-moz-transition:all .25s ease-in-out;-ms-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out}a,a:link{color:#f94489}a:active,a:visited{color:#f7136a}a:focus,a:hover{color:#d41405;text-decoration:none}blockquote{border-left-color:#f1cbbe}body{background:#fffffa url(http://static.tumblr.com/w10eljr/3pon5qwok/fresh_snow.png);color:#000a00}.dropdown-menu .tc-tag{padding:3px 20px;font-weight:400;line-height:1.42857143;white-space:nowrap}#footer{margin:80px 0 40px;font-size:14px}#header{text-align:center;margin-bottom:80px}#header #blog-description{font-size:20px;color:#999;font-weight:300}#header #blog-title #logo+span{display:block;margin-top:24px}#main-container{padding-top:15px}.navbar{margin-bottom:0;border-bottom:none}.navbar,.navbar .dropdown-menu{font-size:12px;letter-spacing:.1em}.navbar .navbar-brand{padding:11px 15px 0}.navbar.navbar-default{background-color:transparent}.navbar .navbar-nav.navbar-right{margin-right:-15px}.no-search-results{text-align:center;font-size:30px}.notes-wrapper{margin:40px auto;max-width:500px;position:relative}.notes-wrapper ol.notes{list-style:none;padding-left:0}.notes-wrapper ol.notes img.avatar{border-radius:50%;margin-right:5px}.notes-wrapper ol.notes li.note+li.note{margin-top:10px}.page-header{border-bottom:none}.page-header h2{text-transform:uppercase;color:#999;font-weight:300;font-size:16px;margin-bottom:40px}section.post.photo .post-body,section.post.photo .post-footer,section.post.photoset .post-body,section.post.photoset .post-footer,section.post.video .post-body,section.post.video .post-footer{margin-left:auto;margin-right:auto;position:relative}section.post h2.post-title{font-size:26px;font-weight:400}section.post .post-body .photo{margin-bottom:20px}section.post .post-footer{font-size:12px}section.post .post-footer a,section.post .post-footer a:active,section.post .post-footer a:link,section.post .post-footer a:visited{color:#888;letter-spacing:.1em;font-weight:300}section.post .post-footer a:focus,section.post .post-footer a:hover{color:#d41405}section.post+section.post{margin-top:80px}.text-center-lg,.text-center-md,.text-center-sm,.text-right-lg,.text-right-md,.text-right-sm{text-align:inherit}.text-center-xs{text-align:center}.text-right-xs{text-align:right}@media (min-width:768px){.text-center-sm,.text-center-xs{text-align:center}.text-right-sm,.text-right-xs{text-align:right}}@media (min-width:992px){.text-center-md,.text-center-sm,.text-center-xs{text-align:center}.text-right-md,.text-right-sm,.text-right-xs{text-align:right}}@media (min-width:1200px){.text-center-lg,.text-center-md,.text-center-sm,.text-center-xs{text-align:center}.text-right-lg,.text-right-md,.text-right-sm,.text-right-xs{text-align:right}}
-  </style>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="all" type="text/css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="http://static.tumblr.com/w10eljr/4wjn607w0/theme.css" type="text/css" media="all">
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -134,7 +132,7 @@
           </div>
         {/block:NoSearchResults}
         {block:Posts}
-          <section class="post {block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}">
+          <section class="post {block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Panorama}panorama{/block:Panorama}{block:Photoset}photoset{/block:Photoset}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}" {block:Photo}style="max-width: 580px"{/block:Photo}{block:Video}style="max-width: 580px"{/block:Video}{block:Photoset}style="max-width: 580px"{/block:Photoset}>
             {block:Text}
               {block:Title}
                 <h2 class="post-title">
@@ -144,72 +142,10 @@
               <div class="post-body">
                 {Body}
               </div>
-              <footer class="post-footer">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Text}
 
             {block:Photo}
-              <div class="post-body photo-and-caption" style="max-width: {PhotoWidth-500}px">
+              <div class="post-body photo-and-caption">
                 <div class="photo">
                   {LinkOpenTag}
                     <img class="photo" width="{PhotoWidth-500}" src="{PhotoURL-500}" alt="{PhotoAlt}">
@@ -237,68 +173,6 @@
                   </div>
                 {/block:Caption}
               </div>
-              <footer class="post-footer" style="max-width: {PhotoWidth-500}px">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Photo}
 
             {block:Panorama}
@@ -311,72 +185,10 @@
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
               </div>
-              <footer class="post-footer">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Panorama}
 
             {block:Photoset}
-              <div class="post-body photoset" style="max-width: {PhotoWidth-500}px">
+              <div class="post-body photoset">
                 {block:Photos}
                   <div class="photo-and-caption">
                     <div class="photo">
@@ -410,68 +222,6 @@
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
               </div>
-              <footer class="post-footer" style="max-width: {PhotoWidth-500}px">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Photoset}
 
             {block:Quote}
@@ -484,68 +234,6 @@
                   <p class="source">{Source}</p>
                 {/block:Source}
               </div>
-              <footer class="post-footer">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Quote}
 
             {block:Link}
@@ -557,68 +245,6 @@
                   <blockquote>{Description}</blockquote>
                 </div>
               {/block:Description}
-              <footer class="post-footer">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Link}
 
             {block:Chat}
@@ -627,7 +253,6 @@
                   <a href="{Permalink}">{Title}</a>
                 </h2>
               {/block:Title}
-
               <div class="post-body">
                 <ul class="chat">
                   {block:Lines}
@@ -641,139 +266,15 @@
                   {/block:Lines}
                 </ul>
               </div>
-              <footer class="post-footer">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Chat}
 
             {block:Video}
-              <div class="post-body" style="max-width: 500px">
+              <div class="post-body">
                 {Video-500}
                 {block:Caption}
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
               </div>
-              <footer class="post-footer" style="max-width: 500px">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
-                  <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
-                    </a>
-                  </li>
-                  {block:RebloggedFrom}
-                    <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
-                      </a>
-                    </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
             {/block:Video}
 
             {block:Audio}
@@ -783,69 +284,70 @@
                   <div class="caption">{Caption}</div>
                 {/block:Caption}
               </div>
-              <footer class="post-footer">
-                <ul class="list-inline">
-                  {block:Date}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-clock-o"></i>
-                        {TimeAgo}
-                      </a>
-                    </li>
-                  {/block:Date}
-                  {block:NoteCount}
-                    <li>
-                      <a href="{Permalink}">
-                        <i class="fa fa-heart"></i>
-                        {NoteCount}
-                      </a>
-                    </li>
-                  {/block:NoteCount}
+            {/block:Audio}
+
+            <footer class="post-footer">
+              <ul class="list-inline">
+                {block:Date}
                   <li>
-                    <a href="{ReblogURL}">
-                      <i class="fa fa-retweet"></i>
-                      {text:reblogTitle}
+                    <a href="{Permalink}">
+                      <i class="fa fa-clock-o"></i>
+                      {TimeAgo}
                     </a>
                   </li>
-                  {block:RebloggedFrom}
+                {/block:Date}
+                {block:NoteCount}
+                  <li>
+                    <a href="{Permalink}">
+                      <i class="fa fa-heart"></i>
+                      {NoteCount}
+                    </a>
+                  </li>
+                {/block:NoteCount}
+                <li>
+                  <a href="{ReblogURL}">
+                    <i class="fa fa-retweet"></i>
+                    {text:reblogTitle}
+                  </a>
+                </li>
+                {block:RebloggedFrom}
+                  <li>
+                    <a href="{ReblogRootURL}">Reblog Source</a>
+                  </li>
+                {/block:RebloggedFrom}
+                {block:ContentSource}
+                  <li>
+                    <a href="{SourceURL}">Source</a>
+                  </li>
+                {/block:ContentSource}
+                {block:HighRes}
+                  <li>
+                    <a href="{PhotoURL-HighRes}">
+                      <i class="fa fa-search-plus"></i>
+                      High-Res
+                    </a>
+                  </li>
+                {/block:HighRes}
+                {block:ExternalAudio}
+                  <li>
+                    <a href="{ExternalAudioURL}">
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </li>
+                {/block:ExternalAudio}
+                {block:HasTags}
+                  {block:Tags}
                     <li>
-                      <a href="{ReblogRootURL}">Reblog Source</a>
-                    </li>
-                  {/block:RebloggedFrom}
-                  {block:ContentSource}
-                    <li>
-                      <a href="{SourceURL}">Source</a>
-                    </li>
-                  {/block:ContentSource}
-                  {block:HighRes}
-                    <li>
-                      <a href="{PhotoURL-HighRes}">
-                        <i class="fa fa-search-plus"></i>
-                        High-Res
+                      <a href="{TagURL}" class="tag">
+                        <i class="fa fa-tag"></i>
+                        {Tag}
                       </a>
                     </li>
-                  {/block:HighRes}
-                  {block:ExternalAudio}
-                    <li>
-                      <a href="{ExternalAudioURL}">
-                        <i class="fa fa-download"></i>
-                        Download
-                      </a>
-                    </li>
-                  {/block:ExternalAudio}
-                  {block:HasTags}
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}" class="tag">
-                          <i class="fa fa-tag"></i>
-                          {Tag}
-                        </a>
-                      </li>
-                    {/block:Tags}
-                  {/block:HasTags}
-                </ul>
-              </footer>
-            {/block:Audio}
+                  {/block:Tags}
+                {/block:HasTags}
+              </ul>
+            </footer>
           </section>
 
           {block:PermalinkPage}

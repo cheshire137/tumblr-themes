@@ -6,6 +6,7 @@
 @light-gray: #ccc;
 @footer-bg: #f5f5f5;
 @navbar-bg: transparent;
+@post-padding: 40px;
 
 a {
   -webkit-transition: all 0.25s ease-in-out;
@@ -137,22 +138,31 @@ body {
 }
 
 section.post {
+  background-color: rgba(255,255,255,0.8);
+  padding: @post-padding;
+
   &.photo, &.photoset, &.video {
-    .post-body, .post-footer {
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-    }
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
   }
 
   h2.post-title {
     font-size: 26px;
     font-weight: 400;
+    margin-top: 0;
+
+    & + .post-body {
+      margin-top: @post-padding;
+    }
   }
 
   .post-body {
+    margin-bottom: @post-padding;
+
     .photo {
       margin-bottom: 20px;
+      text-align: center;
     }
   }
 
@@ -169,6 +179,10 @@ section.post {
       &:hover, &:focus {
         color: @link-hover-color;
       }
+    }
+
+    ul.list-inline {
+      margin-bottom: 0;
     }
   }
 
