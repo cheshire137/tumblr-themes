@@ -26,11 +26,16 @@ gulp.task('tulip-world-css', function() {
   return generate_theme_less('tulip-world', 'theme');
 });
 
+gulp.task('sherbet-punch-css', function() {
+  var less_options = {paths: ['sherbet-punch/bower_components']};
+  return generate_theme_less('sherbet-punch', 'theme', less_options);
+});
+
 gulp.task('watch', function() {
-  var themes = ['tulip-world', 'coral-bubbles'];
+  var themes = ['tulip-world', 'coral-bubbles', 'sherbet-punch'];
   for (var i=0; i<themes.length; i++) {
     var theme = themes[i];
-    gulp.watch([theme + '/theme.less'], [theme + '-css']);
+    gulp.watch([theme + '/*.less'], [theme + '-css']);
   }
 });
 

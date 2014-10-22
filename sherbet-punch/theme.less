@@ -1,0 +1,141 @@
+@import "_bootstrap.less";
+
+body {
+  padding-top: 80px;
+}
+#footer {
+  margin-top: (@line-height-computed * 2);
+  margin-bottom: (@line-height-computed * 2);
+  padding-top: (@line-height-computed * 2);
+  border-top: 1px solid @hr-border;
+}
+#header {
+  margin-bottom: (@line-height-computed * 2);
+
+  #logo {
+    float: left;
+  }
+  #blog-title-and-description {
+    float: left;
+    margin-left: 20px;
+  }
+}
+.navbar-default {
+  background-image: url('http://colourlovers.com.s3.amazonaws.com/images/patterns/4529/4529393.png?1414017862');
+}
+section.post {
+  & + section.post {
+    margin-top: (@line-height-computed * 2);
+    padding-top: (@line-height-computed * 2);
+    border-top: 1px solid @hr-border;
+
+    & > h2.post-title {
+      margin-top: 0;
+    }
+  }
+}
+a#install-theme {
+  position: fixed;
+  z-index: 1031;
+  right: 3px;
+  padding: 0 0.3em;
+  text-decoration: none;
+  top: 26px;
+  color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: #3E3E3E;
+  background: rgba(0, 0, 0, 0.38);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+  font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: padding;
+  -moz-transition-property: padding;
+  -ms-transition-property: padding;
+  -o-transition-property: padding;
+  transition-property: padding;
+  -webkit-transition-duration: .1s;
+  -moz-transition-duration: .1s;
+  -ms-transition-duration: .1s;
+  -o-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+a#install-theme:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  border-radius: inherit;
+}
+
+a#install-theme:hover:after,
+a#install-theme:focus:after {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+@media (max-width: 768px) {
+  a#install-theme {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+
+/*************************************************************************/
+/* Responsive text alignment stuff ***************************************/
+/*************************************************************************/
+
+/* Defaults */
+.text-center-sm,
+.text-center-md,
+.text-center-lg,
+.text-right-sm,
+.text-right-md,
+.text-right-lg { text-align: inherit; }
+
+/* Define xs styles after defaults so they take precedence */
+.text-center-xs { text-align: center; }
+.text-right-xs { text-align: right; }
+
+/* Small grid */
+@media (min-width: 768px) {
+  .text-center-sm, .text-center-xs { text-align: center; }
+  .text-right-sm, .text-right-xs { text-align: right; }
+}
+
+/* Medium grid */
+@media (min-width: 992px) {
+  .text-center-md, .text-center-sm, .text-center-xs { text-align: center; }
+  .text-right-md, .text-right-sm, .text-right-xs { text-align: right; }
+}
+
+/* Large grid */
+@media (min-width: 1200px) {
+  .text-center-lg, .text-center-md, .text-center-sm, .text-center-xs {
+    text-align: center;
+  }
+  .text-right-lg, .text-right-md, .text-right-sm, .text-right-xs {
+    text-align: right;
+  }
+}

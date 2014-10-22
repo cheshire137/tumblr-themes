@@ -1,0 +1,28 @@
+{
+  "name": "sherbet-punch",
+  "version": "0.0.0",
+  "homepage": "https://github.com/moneypenny/tumblr-themes",
+  "authors": [
+    "Sarah Vessels <cheshire137@gmail.com>"
+  ],
+  "description": "A Tumblr theme.",
+  "main": "index.html",
+  "keywords": [
+    "tumblr",
+    "theme",
+    "html",
+    "css",
+    "design"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
