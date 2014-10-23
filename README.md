@@ -1,6 +1,6 @@
 # Have some free Tumblr themes!
 
-Feel free to use these as they come or modify them yourself.
+Feel free to use these as they come or modify them yourself. Copy the contents of index.html into the "Edit HTML" section on Tumblr, under "Customize". There are other files in each theme's folder, but you shouldn't need them just to use the theme.
 
 ## Themes
 
