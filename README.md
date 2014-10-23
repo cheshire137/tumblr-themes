@@ -4,6 +4,12 @@ Feel free to use these as they come or modify them yourself.
 
 ## Themes
 
+### Sherbet Punch
+
+![Screenshot of Sherbet Punch](https://raw.githubusercontent.com/moneypenny/tumblr-themes/master/sherbet-punch/screenshot.png)
+
+Uses [Spiked Sherbet Punch palette](http://www.colourlovers.com/palette/3526993/Spiked_Sherbet_Punch) and [Orange Couch Lines pattern](http://www.colourlovers.com/pattern/4529393/Orange_Couch_Lines). No sidebar, single column.  Tags and followed users listed in drop-down menus in the main navigation. Search bar in header.
+
 ### Tulip World
 
 ![Screenshot of Tulip World](https://raw.githubusercontent.com/moneypenny/tumblr-themes/master/tulip-world/screenshot.png)
@@ -44,3 +50,5 @@ Animal Crossing New Leaf-inspired Tumblr theme. Uses my [AC New Leaf palette](ht
 1. `npm install -g gulp` to globally install Gulp.
 1. `npm install` to install Gulp dependencies and other packages.
 1. `gulp` to start Gulp which will watch for changes in LESS files and recompile them into CSS for each theme.
+
+Use the [Tumblr Static Uploader](https://www.tumblr.com/themes/upload_static_file) to upload minified CSS, JavaScript, and small images for use in themes.
