@@ -186,6 +186,11 @@
 
             {block:Photoset}
               <div class="post-body photoset">
+                {block:Caption}
+                  <h2 class="post-title">
+                    <a href="{Permalink}">{Caption}</a>
+                  </h2>
+                {/block:Caption}
                 {block:Photos}
                   <div class="photo-and-caption">
                     <div class="photo">
@@ -214,10 +219,6 @@
                     {/block:Caption}
                   </div>
                 {/block:Photos}
-
-                {block:Caption}
-                  <div class="caption">{Caption}</div>
-                {/block:Caption}
               </div>
             {/block:Photoset}
 
