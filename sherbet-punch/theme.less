@@ -104,6 +104,31 @@ section.post {
     position: relative;
   }
 
+  .exif {
+    font-size: @font-size-small;
+    list-style: none;
+    color: @gray-light;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+
+      & + li {
+        margin-left: @line-height-computed;
+      }
+    }
+  }
+
+  &.photoset {
+    .photo-and-caption {
+      & + .photo-and-caption {
+        margin-top: @line-height-computed;
+        padding-top: @line-height-computed;
+        border-top: 1px solid @hr-border;
+      }
+    }
+  }
+
   .post-body {
     .photo {
       margin-bottom: @line-height-computed;
